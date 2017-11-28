@@ -144,7 +144,7 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
      >
 
         <g id="chatroom" style="visibility:hidden">                
-        <rect width="520" height="2000" style="fill:white;stroke:red;stroke-width:2"/>
+        <rect width="790" height="2000" style="fill:white;stroke:red;stroke-width:2"/>
         <text x="260" y="40" style="fill:red;font-size:30px;font-weight:bold;text-anchor:middle">Chat Window</text> 
         <text id="chattext" y="45" style="font-size: 14px;font-weight:bold"/>
       </g>

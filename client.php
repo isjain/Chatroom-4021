@@ -76,7 +76,7 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
         <hr />
 
         <!--logout button-->
-        <form action="logout.php" method="post" onsubmit="alert('Goodbye!')">
+        <form action="logout.php" method="post" onsubmit="alert('You have successfully logged out!')">
             <table border="0" cellspacing="5" cellpadding="0">
                 <tr style="border-top: 1px solid gray">
                     <td><input class="button" type="submit" value="Logout" style="width: 200px" /></td>
