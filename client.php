@@ -73,9 +73,16 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                         <input type="hidden" name="color" id="color" value="magenta">
 
         </form>
-        
-        <!--logout button-->
+        <hr />
 
+        <!--logout button-->
+        <form action="logout.php" method="post" onsubmit="alert('Goodbye!')">
+            <table border="0" cellspacing="5" cellpadding="0">
+                <tr style="border-top: 1px solid gray">
+                    <td><input class="button" type="submit" value="Logout" style="width: 200px" /></td>
+                </tr>
+            </table>
+        </form>
 
     </body>
 </html>

@@ -14,6 +14,14 @@ if (!$xmlh->fileExist()) {
     exit;
 }
 
+header("Location: login.html");
+
+
 
 
 ?>
+
+
+
+
+
