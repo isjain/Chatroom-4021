@@ -123,7 +123,7 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                 // Create the score text span
                 var conetentNode = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
                 // Set the attributes and create the text
-                conetentNode.setAttribute("x", 200);
+                conetentNode.setAttribute("x", 220);
                 conetentNode.setAttribute("fill", colorStr)
                 conetentNode.appendChild(document.createTextNode(contentStr));
                 
@@ -145,8 +145,8 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 
         <g id="chatroom" style="visibility:hidden">                
         <rect width="790" height="2000" style="fill:white;stroke:red;stroke-width:2"/>
-        <text x="260" y="40" style="fill:red;font-size:30px;font-weight:bold;text-anchor:middle">Chat Window</text> 
-        <text id="chattext" y="45" style="font-size: 14px;font-weight:bold"/>
+        <text x="360" y="40" style="fill:red;font-size:30px;font-weight:bold;text-anchor:middle">Chat Window</text> 
+        <text id="chattext" y="80" style="font-size: 14px;font-weight:bold"/>
       </g>
   </svg>
   

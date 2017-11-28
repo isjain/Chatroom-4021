@@ -21,6 +21,7 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
         function load() {
             var name = "<?php print $name; ?>";
 
+
             //delete this line 
             //window.parent.frames["message"].document.getElementById("username").setAttribute("value", name)
 
@@ -29,7 +30,7 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 
 
 
-                //select color
+                // select color
         function select(color) {
             var fld = document.getElementById("color");
             if (color != fld.value) {
@@ -38,7 +39,15 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                 fld.value=color;
             }
         }
-
+        
+       function setCookie(name, value, expires, path, domain, secure) {
+            var curCookie = name + "=" + escape(value) +
+                ((expires) ? "; expires=" + expires.toGMTString() : "") +
+                ((path) ? "; path=" + path : "") +
+                ((domain) ? "; domain=" + domain : "") +
+                ((secure) ? "; secure" : "");
+            document.cookie = curCookie;
+        }
 
         
         //]]>
@@ -55,23 +64,25 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                     <td><input class="text" type="text" name="message" id="msg" style= "width: 780px" /></td>
                 </tr>
                 <tr>
-                    <td><input class="button" type="submit" value="Send Your Message" style="width: 200px" /></td>
-                </tr>
-                <tr>
                     <td>
-                        <div style="position:relative">
-                            <div style="background-color:red;left:0px" onclick="select('red')"></div>
-                            <div style="background-color:yellow;left:50px" onclick="select('yellow')"></div>
-                            <div style="background-color:green;left:100px" onclick="select('green')"></div>
-                            <div style="background-color:cyan;left:150px" onclick="select('cyan')"></div>
-                            <div style="background-color:blue;left:200px" onclick="select('blue')"></div>
-                            <div style="background-color:magenta;left:250px" onclick="select('magenta')"></div>
-                        </div>
+                        <input class="button" type="submit" value="Send Your Message" style="width: 200px" />
+                        <input id="color" type="hidden" name="color" value="<?php echo isset($_COOKIE['color']) ? $_COOKIE['color'] : '#000' ?>"/>
+                        <span>
+                            <span>
+                                Choose your color:
+                            </span>
+                            <span>
+                                <button class="color-button" style="background: #000" onclick="select('#000');return false;"></button>
+                                <button class="color-button" style="background: #1ff" onclick="select('#1ff');return false;"></button>
+                                <button class="color-button" style="background: #f00" onclick="select('#f00');return false;"></button>
+                                <button class="color-button" style="background: #00f" onclick="select('#00f');return false;"></button>
+                                <button class="color-button" style="background: #0f0" onclick="select('#0f0');return false;"></button>
+                                <button class="color-button" style="background: #50f" onclick="select('#50f');return false;"></button>
+                            </span>
+                        </span>
                     </td>
                 </tr>
             </table>
-                        <input type="hidden" name="color" id="color" value="magenta">
-
         </form>
         <hr />
 

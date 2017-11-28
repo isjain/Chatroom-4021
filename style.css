@@ -25,3 +25,8 @@ input.button {
     border-left: 1px solid gray;
     background: lightgray;
 }
+
+.color-button {
+    width: 25px;
+    height: 25px;
+}
