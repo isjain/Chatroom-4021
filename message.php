@@ -82,23 +82,55 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
         }
 
 
-        function updateChat(xmlDoc) {
+////////////////////////////////////////////////////////        bullshit for URL
+        //         function updateChat(xmlDoc) {
+        //     var messages = xmlDoc.getElementsByTagName("message");
+        //     var msgStr = []
             
+        //     for (var i = lastMsgID; i < messages.length; i++) {
+        //         // Obtain user name and message content from each message node,
+        //         // and add to the variable msg
+        //         // We use "|" as a separator to separate each user name and message content
+        //         var msg = messages.item(i);
+        //         msgStr.push(new Message(msg.getAttribute("name"), msg.firstChild.nodeValue))
+        //     }
+        //     lastMsgID = messages.length;
+        //     addMsgsToChatroom(msgStr);
+        // }
+        // function applyURL(content){
+        //     var words = content.split(" ")
+        //     var s = ""
+        //     for (var i=0; i<words.length; i++){
+        //         if (words[i].indexOf("http://")==0)
+        //             words[i] = "<a href =\"" + words[i] + "\" target=\"_blank\">" + words[i] + "</a>"
+        //         s = s + words[i] + " "
+        //     }
+        //     return s
+        // }
+        // function addMsgsToChatroom(msgStr){
+        //     for (var i = 0; i < msgStr.length ; i++){
+        //         var msg = document.createElement("p");
+        //         msg.innerHTML = msgStr[i].name + " : " + applyURL(msgStr[i].content)
+        //         //var node = document.createTextNode(msgStr[i].name + " : " +msgStr[i].content);
+                
+        //         //msg.appendChild(node);
+        //         chatroom.appendChild(msg);
+        //     }
+        //     window.scrollTo(0,document.body.scrollHeight); 
+        // }
+
+
+        function updateChat(xmlDoc) {
             //point to the message nodes
             var messages = xmlDoc.getElementsByTagName("message");
             //console.log(messages);
-            
-            
             //Obtain user name and message content from each message node
             for(var i = lastMsgID; i < messages.length; i++) {
                 var messageNode = messages.item(i);
-                //console.log(messageNode);
-                //var name = messageNode.getElementById("name");
                 var message = messageNode.innerHTML;
                 var username = messageNode.getAttribute('name');
                 var color = messageNode.getAttribute('color');
                 console.log(color);
-                //console.log(message + " " + username);
                 //Call function showMessage() to display message
                 showMessage(username, message, color);
             }
@@ -125,13 +157,95 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                 // Set the attributes and create the text
                 conetentNode.setAttribute("x", 220);
                 conetentNode.setAttribute("fill", colorStr)
-                conetentNode.appendChild(document.createTextNode(contentStr));
+
+                conetentNode.appendChild(document.createTextNode(applyURL(contentStr)));
                 
                 // Add the name to the text node
                 node.appendChild(conetentNode);
+                // var link = document.createElementNS("http://www.w3.org/2000/svg", "a");
+                // link.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', "youtube.com");
+                // node.appendChild(link);
         }
 
-        //]]>
+        function applyURL(content){
+            var words = content.split(" ")
+            var s = ""
+            for (var i=0; i<words.length; i++){
+                if (words[i].indexOf("http://")==0) {
+
+
+
+        // Set the attributes and create the text
+                        var conetentNode = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+
+        conetentNode.setAttribute("x", 200);
+        conetentNode.setAttribute("fill", "red");
+
+        var a_tag = document.createElementNS("http://www.w3.org/2000/svg", "a");
+        a_tag.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", words[i]);
+        a_tag.appendChild(document.createTextNode(words[i]));
+
+        conetentNode.appendChild(a_tag);
+        var node = document.getElementById("chattext");
+        node.appendChild(conetentNode);
+
+
+                }
+                // words[i] = '<a href="http://google.com/">An example link</a>'
+
+// var link = document.createElementNS("http://www.w3.org/2000/svg", "a");
+
+
+                s = s + words[i] + " "
+            }
+            return s
+        }
+
+
+
+       // var contentNode = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+
+       //  // Set the attributes and create the text
+       //  contentNode.setAttribute("x", 200);
+       //  contentNode.setAttribute("fill", color);
+
+       //  var a_tag = document.createElementNS("http://www.w3.org/2000/svg", "a");
+       //  a_tag.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "http://google.com");
+       //  a_tag.appendChild(document.createTextNode("google"));
+
+       //  contentNode.appendChild(a_tag);
+
+
+       //  // Add the name to the text node
+       //  node.appendChild(contentNode);
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var svgElement = document.getElementById ("svgTag");
+
+// var link = document.createElementNS("http://www.w3.org/2000/svg", "a");
+// link.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', "page2.html");
+// svgElement.appendChild(link);
+
+// var box = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+// box.setAttribute("x", 30); 
+// box.setAttribute("y", 30);
+// box.setAttribute("width", 200);
+// box.setAttribute("height", 50);
+// box.setAttribute("fill", "blue");
+// link.appendChild(box);
+
+
         </script>
     </head>
 
