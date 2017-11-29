@@ -1,12 +1,5 @@
 <?xml version="1.0"?>
 <chatroom>
-<!--   <users><user name="Ishan"/><user name="Irene"/></users>
-
-	<messages>
-		<message name="... name here ...">... message content here ...</message>
- 	<messages/> -->
-
- 	  <users><user name="K"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishsan"/><user name="Ihan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/></users>
-  <messages><message name="Ishan" color="red">Hello</message><message name="Ishan" color="#f00">Sup?</message><message name="Ishan" color="#00f">Haiiiiiii</message><message name="Ishan" color="#50f">Sup</message><message name="Ishan" color="#000">Hai</message><message name="Ishan" color="#0f0">Hai</message><message name="Ishan" color="#000">http://facebook.com</message><message name="Ishan" color="#000">Hi I found this cool link check it out : http://gmail.com</message></messages>
+  <users><user name="Ishan"/><user name="Hi"/><user name="Ishan"/><user name="Ishan"/><user name="ishanikoum"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/><user name="Ishan"/></users>
+  <messages><message name="Ishan" color="#000">ishan</message><message name="Ishan" color="#000">__EMPTY__</message><message name="Ishan" color="#000">Hello</message><message name="Ishan" color="#000">ewhat's</message><message name="Ishan" color="#00f">Hello</message><message name="Ishan" color="#000">http://javadoc.com</message><message name="Ishan" color="#f00">What's up baby?</message><message name="Ishan" color="#000">Hello</message><message name="Ishan" color="#000">What's up?</message><message name="Ishan" color="#00f">I dk man</message><message name="Ishan" color="#000">http://lifesucks</message></messages>
 </chatroom>
-<!-- <message name="ishan"><a href ="http://nasa.com" target="_blank">http://nasa.com</a><message> -->
