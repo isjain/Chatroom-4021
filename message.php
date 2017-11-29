@@ -168,37 +168,34 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
         }
 
         function applyURL(content){
-            var words = content.split(" ")
-            var s = ""
-            for (var i=0; i<words.length; i++){
-                if (words[i].indexOf("http://")==0) {
+                var words = content.split(" ")
+                var s = ""
+                for (var i=0; i<words.length; i++){
+                    if (words[i].indexOf("http://")==0) {
 
 
 
-        // Set the attributes and create the text
-                        var conetentNode = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+            // Set the attributes and create the text
+                            var conetentNode = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
 
-        conetentNode.setAttribute("x", 200);
-        conetentNode.setAttribute("fill", "red");
+            conetentNode.setAttribute("x", 600);
 
-        var a_tag = document.createElementNS("http://www.w3.org/2000/svg", "a");
-        a_tag.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", words[i]);
-        a_tag.appendChild(document.createTextNode(words[i]));
+            var a_tag = document.createElementNS("http://www.w3.org/2000/svg", "a");
+            a_tag.setAttribute("fill", "red")
+            a_tag.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", words[i]);
+            a_tag.setAttribute("target", "_blank");
+            a_tag.setAttribute("style", "text-decoration:underline")
+            a_tag.appendChild(document.createTextNode(words[i]));
 
-        conetentNode.appendChild(a_tag);
-        var node = document.getElementById("chattext");
-        node.appendChild(conetentNode);
+            conetentNode.appendChild(a_tag);
+            var node = document.getElementById("chattext");
+            node.appendChild(conetentNode);
 
 
+                    }
+                    s = s + words[i] + " " 
                 }
-                // words[i] = '<a href="http://google.com/">An example link</a>'
-
-// var link = document.createElementNS("http://www.w3.org/2000/svg", "a");
-
-
-                s = s + words[i] + " "
-            }
-            return s
+                return s
         }
 
 
