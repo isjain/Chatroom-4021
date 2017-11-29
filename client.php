@@ -87,6 +87,7 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
         <hr />
 
         <!--logout button-->
+
         <form action="logout.php" method="post" onsubmit="alert('You have successfully logged out!')">
             <table border="0" cellspacing="5" cellpadding="0">
                 <tr style="border-top: 1px solid gray">
@@ -94,6 +95,10 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                 </tr>
             </table>
         </form>
+
+<a href="onlineuser.html" target="_blank">
+    <button style="width:200px; height:25px"> Show Online Users 2</button>
+</a>
 
     </body>
 </html>
