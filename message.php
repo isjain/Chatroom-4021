@@ -158,7 +158,9 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                 conetentNode.setAttribute("x", 220);
                 conetentNode.setAttribute("fill", colorStr)
 
-                conetentNode.appendChild(document.createTextNode(applyURL(contentStr, conetentNode)));
+                // conetentNode.appendChild(document.createTextNode(applyURL(contentStr, conetentNode)));
+                               applyURL(contentStr, conetentNode);
+
                 
                 // Add the name to the text node
                 node.appendChild(conetentNode);
@@ -173,13 +175,6 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                 for (var i=0; i<words.length; i++){
                     if (words[i].indexOf("http://")==0) {
 
-
-
-            // Set the attributes and create the text
-            // var conetentNode = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-
-            // conetentNode.setAttribute("x", 600);
-
             var a_tag = document.createElementNS("http://www.w3.org/2000/svg", "a");
             a_tag.setAttribute("fill", "red")
             a_tag.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", words[i]);
@@ -187,13 +182,17 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
             a_tag.setAttribute("style", "text-decoration:underline")
             a_tag.appendChild(document.createTextNode(words[i]));
             conetentNode.appendChild(a_tag);
-            // var node = document.getElementById("chattext");
-            // node.appendChild(conetentNode);
+            s = " "
+
 
 
                     }
-                   else  s = " " + s + words[i] + " " 
+                   else {
+                                       s= " " + words[i] + " "
+                    conetentNode.innerHTML += s + " " ;
                 }
+                }
+
                 return s
         }
 
