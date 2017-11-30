@@ -97,7 +97,7 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
         </form>
 
 <a href="onlineuser.html" target="_blank">
-    <button style="width:200px; height:25px"> Show Online Users 2</button>
+    <button style="width:200px; height:25px"> Show Online Users</button>
 </a>
 
     </body>

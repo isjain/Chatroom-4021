@@ -46,20 +46,34 @@
             //point to the message nodes
 
             var users = xmlDoc.getElementsByTagName("user");
-            alert("Shugan : " + users.length) 
+            // alert("Shugan : " + users.length) 
 
          	// $('#userlist').html('');
          	///// idk why this is not working, and idk whats the point
-                    		alert("x")
+                    		// alert("x")
 
         	for (var i = 0; i < users.length; i++) {
-        		alert(users[i].getAttribute('name'))
-        		// showUser(users[i].getAttribute('name'), users[i].getAttribute('picture'));
-        		showUser(users[i].getAttribute('name'))
+        		// alert(users[i].getAttribute('name'))
+        		showUser(users[i].getAttribute('name'), users[i].getAttribute('picture'));
+        		// showUser(users[i].getAttribute('name'))
         	}
         }
 
-       	function showUser(nameStr){
+     //   	function showUser(nameStr){
+     //    	// alert("x")
+     //    	// alert(nameStr)
+     //    	  var table = document.getElementById("userTable");
+
+					// var tr = document.createElement("tr");
+					// var td = document.createElement("td");
+					// var txt = document.createTextNode(nameStr);
+
+					// td.appendChild(txt);
+					// tr.appendChild(td);
+					// table.appendChild(tr);
+     //    }
+
+            	function showUser(nameStr, pictureUrl){
         	// alert("x")
         	// alert(nameStr)
         	  var table = document.getElementById("userTable");
@@ -68,12 +82,14 @@
 					var td = document.createElement("td");
 					var txt = document.createTextNode(nameStr);
 
+					var td2 = document.createElement("td");
+					var txt2 = document.createTextNode(pictureUrl);
+
 					td.appendChild(txt);
+					td2.appendChild(txt2);
 					tr.appendChild(td);
+					tr.appendChild(td2)
 					table.appendChild(tr);
-
-
-        	// list.append('<tr><td>' + nameStr + '</td></tr>')
         }
 
         // function showUser(nameStr, pictureUrl){
@@ -115,8 +131,8 @@
 	<table id="userTable">
 		<thead class="t-head" cellspacing="0" cellpadding="0">
 			<tr>
-				<!-- <th><strong>Picture</strong></th> -->
 				<th><strong>Username</strong></th>
+				<th><strong>Picture</strong></th>
 			</tr>
 		</thead>
 		<tbody id="userlist">
