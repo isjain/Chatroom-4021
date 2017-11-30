@@ -158,7 +158,7 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                 conetentNode.setAttribute("x", 220);
                 conetentNode.setAttribute("fill", colorStr)
 
-                conetentNode.appendChild(document.createTextNode(applyURL(contentStr)));
+                conetentNode.appendChild(document.createTextNode(applyURL(contentStr, conetentNode)));
                 
                 // Add the name to the text node
                 node.appendChild(conetentNode);
@@ -167,7 +167,7 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
                 // node.appendChild(link);
         }
 
-        function applyURL(content){
+        function applyURL(content, conetentNode){
                 var words = content.split(" ")
                 var s = ""
                 for (var i=0; i<words.length; i++){
@@ -176,9 +176,9 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
 
 
             // Set the attributes and create the text
-                            var conetentNode = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+            // var conetentNode = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
 
-            conetentNode.setAttribute("x", 600);
+            // conetentNode.setAttribute("x", 600);
 
             var a_tag = document.createElementNS("http://www.w3.org/2000/svg", "a");
             a_tag.setAttribute("fill", "red")
@@ -186,61 +186,18 @@ print "<?xml version=\"1.0\" encoding=\"utf-8\"?>";
             a_tag.setAttribute("target", "_blank");
             a_tag.setAttribute("style", "text-decoration:underline")
             a_tag.appendChild(document.createTextNode(words[i]));
-
             conetentNode.appendChild(a_tag);
-            var node = document.getElementById("chattext");
-            node.appendChild(conetentNode);
+            // var node = document.getElementById("chattext");
+            // node.appendChild(conetentNode);
 
 
                     }
-                    s = s + words[i] + " " 
+                   else  s = " " + s + words[i] + " " 
                 }
                 return s
         }
 
 
-
-       // var contentNode = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-
-       //  // Set the attributes and create the text
-       //  contentNode.setAttribute("x", 200);
-       //  contentNode.setAttribute("fill", color);
-
-       //  var a_tag = document.createElementNS("http://www.w3.org/2000/svg", "a");
-       //  a_tag.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "http://google.com");
-       //  a_tag.appendChild(document.createTextNode("google"));
-
-       //  contentNode.appendChild(a_tag);
-
-
-       //  // Add the name to the text node
-       //  node.appendChild(contentNode);
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var svgElement = document.getElementById ("svgTag");
-
-// var link = document.createElementNS("http://www.w3.org/2000/svg", "a");
-// link.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', "page2.html");
-// svgElement.appendChild(link);
-
-// var box = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-// box.setAttribute("x", 30); 
-// box.setAttribute("y", 30);
-// box.setAttribute("width", 200);
-// box.setAttribute("height", 50);
-// box.setAttribute("fill", "blue");
-// link.appendChild(box);
 
 
         </script>
